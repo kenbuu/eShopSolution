@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eShopSolution.Data.EF;
 
 namespace eShopSolution.Data.Migrations
 {
     [DbContext(typeof(EShopDBContext))]
-    partial class EShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200426121257_AspNetCoreIdentityDatabase")]
+    partial class AspNetCoreIdentityDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,13 +94,6 @@ namespace eShopSolution.Data.Migrations
                     b.HasKey("UserId", "RoleId");
 
                     b.ToTable("AppUserRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("408b4b21-707a-40b6-abe6-db868e7adbd9"),
-                            RoleId = new Guid("40fa8cd9-8fca-46c1-9859-1b11c2e92adb")
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
@@ -175,16 +170,6 @@ namespace eShopSolution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppRoles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("40fa8cd9-8fca-46c1-9859-1b11c2e92adb"),
-                            ConcurrencyStamp = "093fea3f-a630-4e9b-95dd-081d05b5cc3f",
-                            Description = "Adminstrator role",
-                            Name = "admin",
-                            NormalizedName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("eShopSolution.Data.Entities.AppUser", b =>
@@ -251,27 +236,6 @@ namespace eShopSolution.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AppUsers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("408b4b21-707a-40b6-abe6-db868e7adbd9"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "c4dee354-d9cb-47a3-8665-d3af2d1206c4",
-                            Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "nongtrungbuu1903@gmail.com",
-                            EmailConfirmed = true,
-                            FirstName = "Buu",
-                            LastName = "Nong",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "nongtrungbuu1903@gmail.com",
-                            NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBHnsz1x1EoZXl0vQd6mxTh+HLbmYcERoHi5VqGzRS8dC1n1Mvujosr8XXXLLpvyrw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "",
-                            TwoFactorEnabled = false,
-                            UserName = "admin"
-                        });
                 });
 
             modelBuilder.Entity("eShopSolution.Data.Entities.Cart", b =>
@@ -523,7 +487,7 @@ namespace eShopSolution.Data.Migrations
                     b.Property<DateTime>("OrderDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2020, 4, 26, 19, 59, 19, 166, DateTimeKind.Local).AddTicks(4313));
+                        .HasDefaultValue(new DateTime(2020, 4, 26, 19, 12, 56, 571, DateTimeKind.Local).AddTicks(6736));
 
                     b.Property<string>("ShipAddress")
                         .IsRequired()
@@ -617,7 +581,7 @@ namespace eShopSolution.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2020, 4, 26, 19, 59, 19, 190, DateTimeKind.Local).AddTicks(5467),
+                            DateCreated = new DateTime(2020, 4, 26, 19, 12, 56, 589, DateTimeKind.Local).AddTicks(3127),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
