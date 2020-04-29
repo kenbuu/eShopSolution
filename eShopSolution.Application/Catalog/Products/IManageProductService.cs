@@ -20,8 +20,6 @@ namespace eShopSolution.Application.Catalog.Products
 
         Task<bool> UpdateStock(int productId, int addedQuantity);
 
-        Task<List<ProductViewModel>> GetAll();
-
         Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
     }
 }

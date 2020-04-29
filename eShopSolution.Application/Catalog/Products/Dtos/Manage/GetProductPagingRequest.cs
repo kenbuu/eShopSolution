@@ -8,8 +8,7 @@ namespace eShopSolution.Application.Catalog.Products.Dtos.Manage
     public class GetProductPagingRequest : PagingRequestBase
     {
         public string Keyword { get; set; }
-        public int PageIndex { get; set; }
-        public int PageSize { get; set; }
+
         public List<int> CategoryId { get; set; }
     }
 }
