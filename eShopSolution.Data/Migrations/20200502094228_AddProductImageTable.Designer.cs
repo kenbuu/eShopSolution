@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eShopSolution.Data.EF;
 
 namespace eShopSolution.Data.Migrations
 {
     [DbContext(typeof(EShopDBContext))]
-    partial class EShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20200502094228_AddProductImageTable")]
+    partial class AddProductImageTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +182,7 @@ namespace eShopSolution.Data.Migrations
                         new
                         {
                             Id = new Guid("40fa8cd9-8fca-46c1-9859-1b11c2e92adb"),
-                            ConcurrencyStamp = "78bc9fe9-fcf0-4de8-af04-ac9538f26dad",
+                            ConcurrencyStamp = "9afec9e3-d709-4412-aa14-c28befa98105",
                             Description = "Adminstrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -257,7 +259,7 @@ namespace eShopSolution.Data.Migrations
                         {
                             Id = new Guid("408b4b21-707a-40b6-abe6-db868e7adbd9"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "00d19893-34b9-4bdd-a946-c3a033c57cbe",
+                            ConcurrencyStamp = "db01c94b-c4c5-488e-bbc2-1490ed66b12f",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "nongtrungbuu1903@gmail.com",
                             EmailConfirmed = true,
@@ -266,7 +268,7 @@ namespace eShopSolution.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "nongtrungbuu1903@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEJ6mv8E8gWw9T7qbd9LF17ClWBKWnzTVu4A4PCsK/k3x1/ydo96DgP8SBFAzwob2MQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEcBNEwTJvOKP5Ik5HmlqYxQH7Vsjn8CCk0PQgQO8+tIY4IxjN5kf3c4x4gPzg8wGA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -615,7 +617,7 @@ namespace eShopSolution.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2020, 7, 3, 17, 45, 18, 290, DateTimeKind.Local).AddTicks(6546),
+                            DateCreated = new DateTime(2020, 5, 2, 16, 42, 26, 973, DateTimeKind.Local).AddTicks(4124),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -639,8 +641,8 @@ namespace eShopSolution.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<long>("FileSize")
-                        .HasColumnType("bigint");
+                    b.Property<int>("FileSize")
+                        .HasColumnType("int");
 
                     b.Property<string>("ImagePath")
                         .IsRequired()
