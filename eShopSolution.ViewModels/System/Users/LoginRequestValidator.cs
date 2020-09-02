@@ -11,7 +11,7 @@ namespace eShopSolution.Application.System.Users
         public LoginRequestValidator()
         {
             RuleFor(x => x.UserName).NotEmpty().WithMessage("User name is requied");
-            RuleFor(x => x.Password).NotEmpty().WithMessage("User name is requied")
+            RuleFor(x => x.Password).NotEmpty().WithMessage("Password is requied")
                 .MinimumLength(6).WithMessage("Password is at least 6 character");
         }
     }
