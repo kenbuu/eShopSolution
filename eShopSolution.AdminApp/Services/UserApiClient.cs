@@ -50,5 +50,17 @@ namespace eShopSolution.AdminApp.Services
             var users = JsonConvert.DeserializeObject<PageResult<UserVm>>(body);
             return users;
         }
+
+        public async Task<bool> RegisterUser(RegisterRequest request)
+        {
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(_configuration["BaseAddress"]);
+
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync($"/api/users", httpContent);
+            return response.IsSuccessStatusCode;
+        }
     }
 }

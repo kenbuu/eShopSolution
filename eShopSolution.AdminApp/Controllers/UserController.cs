@@ -45,9 +45,20 @@ namespace eShopSolution.AdminApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(RegisterRequest request)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            var result = await _userApiClient.RegisterUser(request);
+            if (result)
+                return RedirectToAction("Index");
+            return View(request);
         }
 
         [HttpPost]
